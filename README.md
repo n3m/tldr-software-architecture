@@ -17,3 +17,12 @@
 ## Architectures
 
 - [Layered Pattern / N-tier](/layered-pattern/README.md)
+- [Pipe-Filter Pattern](/pipe-filter-pattern/README.md)
+- [Client-Server Pattern](client-server-pattern/README.md)
+- [Model View Controller Pattern](model-view-controller-pattern/README.md)
+- [Event Bus Pattern](event-bus-pattern/README.md)
+- [Microservices Pattern](microservices-pattern/README.md)
+- [Broker Pattern](broker-pattern/README.md)
+- [Peer-to-Peer Pattern](peer-to-peer-pattern/README.md)
+- [Blackboard Pattern](blackboard-pattern/README.md)
+- [Master-Slave Pattern](master-slave-pattern/README.md)
