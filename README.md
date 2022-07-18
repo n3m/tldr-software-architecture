@@ -1,5 +1,9 @@
 # TLDR; Software Architecture
 
+## Description
+
+This is a quick and easy guide to the Top 10 most used SD Architectures
+
 ## FAQ
 
 - [ ] What is software architecture?
