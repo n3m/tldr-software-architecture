@@ -14,7 +14,9 @@
 
 - An example of this conduct is seen in the following image:
 
-![img](https://www.baeldung.com/wp-content/uploads/sites/4/2021/11/layered.drawio.svg)
+<p align="center">
+  <img src="https://www.baeldung.com/wp-content/uploads/sites/4/2021/11/layered.drawio.svg">
+</p>
 
 - Layer 1 is connected to Layer 2 explicitly
 - Layer 1 is connected to Layer 3 implicitly through Layer 2
@@ -34,7 +36,9 @@
   - **Domain Layer** – responsible for algorithms, and programming components
   - **Infrastructure/Persistence/Database Layer** – responsible for handling data, databases
 
-![img](https://www.baeldung.com/wp-content/uploads/sites/4/2021/11/layered_common.drawio.svg)
+<p align="center">
+  <img src="https://www.baeldung.com/wp-content/uploads/sites/4/2021/11/layered_common.drawio.svg">
+</p>
 
 ## Advantages and Disadvantages
 
