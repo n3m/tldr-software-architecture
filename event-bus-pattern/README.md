@@ -1,50 +1,38 @@
-# TLDR; Software Architecture - Model View Controller Pattern
+# TLDR; Software Architecture - Event-Bus Pattern
 
 ## Description
 
-- Distributed system that can service async arriving messages with associated with high volume of events
-- 4 main Components: Event Source, Event Listener, Channel, Event Bus
+Basically it's behaves like a pipeline (Bus) of computers connected, that whenever one of them sends a message (Event),
+it's dispatched to all the others, and they decide if they consume or ignore that message.
 
-### Event Source
+## Pattern Architecture
 
-- Publish messages to particular channels on an event bus.
+This architecture can be built in two different ways:
 
-### Event Listener
+### Classic Event-Bus
 
-- Subscribes to particular channels
-- Are notified of messages that arrived to suscribed channels
+We start by defining an `EventBus`, a `Subscribable` and an `Event` interface.
 
-## Pros
+- Subscribable
 
-- New publishers, suscribers and connections can be added easily
+  - Needs to have a method that can handle given types of Events.
+    - Given a type that it recognizes, it must analyze and process the data, otherwise ignore it.
 
-## Cons
+- EventBus
 
-- Scalability is an issue, since all messages travel through the same event bus
+  - Holds the contract (process) information
+  - Holds a list of registered Subscribers
+  - Is the dispatch manager
 
-## Applications
+- Event
+  - Hold the data, and type of the message
 
-- Android development
-- Ecommerce Apps
-- Notification Services
+### Consumer / Dispatcher Event-Bus
 
-## Rating
+## Advantages and Disadvantages
 
-- Agility
-  - Rate: High
-  - The capacity to react swiftly to an environment that is continually changing is known as overall agility. Although this pattern's layers of isolation feature allows for the separation of modifications, the strong coupling of its components and the monolithic nature of most implementations make this architectural pattern difficult and time-consuming to update.
-- Deployment
-  - Rate: High
-  - Because the event-processor components are isolated, this style is often simple to implement. Because the event mediator component is relatively strongly tied to the event processors, it may be necessary to alter the event mediator as well, necessitating the deployment of both for each given modification. This is why the broker topology is typically easier to install than the mediator topology.
-- Testability
-  - Rate: Low
-  - Although it is not very challenging, each unit testing does need a dedicated testing client or testing tool to produce events. The asynchronous nature of this pattern makes testing harder.
-- Performance
-  - Rate: High
-  - The ability to perform decoupled, parallel asynchronous operations outweighs the cost of queuing and dequeuing messages. While it is possible to implement an event-driven architecture that does not perform well due to all the messaging infrastructure involved, in general, the pattern achieves high performance through its asynchronous capabilities.
-- Scalability
-  - Rate: High
-  - This pattern's extremely independent and separated event processors inherently enable scalability. Scalability on a finer scale is possible because each event processor may be scaled independently.
-- Ease of development
-  - Rate: Low
-  - Due to the asynchronous nature of the pattern, contract formation, and the requirement for more sophisticated error handling conditions inside the code for unresponsive event processors and unsuccessful brokers, development may be fairly challenging.
+- Advantages
+
+- Disadvantages
+
+## Usecases
